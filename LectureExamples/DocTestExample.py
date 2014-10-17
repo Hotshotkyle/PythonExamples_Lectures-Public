@@ -16,7 +16,7 @@
 
 
 # Simple int example
-def testIntAddition(left, right):
+def testIntAddition(left: int, right: int)->"sum of left and right":
 	"""Test the + operator for ints
 	
 	
@@ -44,7 +44,7 @@ def testIntAddition(left, right):
 	return left + right
 	
 # Simple List example
-def printFirstItemInList(theList):
+def printFirstItemInList(theList: "list of items"):
 	""" Retrieve the first item from the list and print it
 	
 	Test a list of ints
@@ -71,7 +71,11 @@ def printFirstItemInList(theList):
 	
 	
 # Test Output of print and return value
-def printAndReturnSum(*args):
+# that \ at the end of the line allows you to continue
+# the same statement on the next line!
+def printAndReturnSum(*args: "variadic param")\
+->"return sum of ints provided as parameters":
+		
 	""" Print and return the sum of the args that are ints
 	
 	>>> printAndReturnSum(1,2,3)

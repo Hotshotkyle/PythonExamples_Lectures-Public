@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 ################################
-# File Name:	DocTestExample.y
+# File Name:	DocTestExample.py
 # Author:		Chadd Williams
 # Date:			10/17/2014
 # Class:		CS 360

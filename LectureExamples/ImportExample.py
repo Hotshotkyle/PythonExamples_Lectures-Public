@@ -12,7 +12,6 @@
 
 from DocTestExample import testIntAddition
 
-
 def foo():
 	""" import a method only for this function
 	
@@ -45,7 +44,8 @@ def main():
 	# or error that Python produces, in this case a NameError
 	# since the function is not listed in set of names in scope
 	# print some information rather than crashing the program
-	
+	#
+	# https://docs.python.org/3/tutorial/errors.html
 	try:
 		totalValue = printAndReturnSum(1,2,3,3,2,1)
 	

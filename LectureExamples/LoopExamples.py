@@ -46,9 +46,53 @@ def loopOnSet():
 
 def loopOnDict():
 	"""loop on a dictionary
+	
 	"""
 	
+	classes = { 150:"Introduction to Computer Science I",
+				250:"Introduction to Computer Science II",
+				300:"Data Structures",
+				310:"Theoretical Computer Science",
+				360:"Special Topics: Open Source Software Development",
+				380:"Algorithms Analysis and Design",					
+				430:"Computer Architecture",
+				445:"Introduction to Database Systems",
+				460:"Operating Systems",
+				480:"Compilers",
+				493:"Software Engineering I",
+				494:"Software Engineering II" }
+	print("----------------")
 	
+	for key, value in classes.items():
+		print(key,"->", value)
+		
+	print("----------------")
+	
+	for key in sorted(classes.keys()):
+		print(key,"->", classes[key])
+		
+	print("----------------")
+	
+	
+	for value in sorted(classes.values()):
+		print(value)
+		
+	print("----------------")
+
+
+	for value in classes.values():
+		if value[-1] == 'I' :
+			print(value)
+		
+	print("----------------")
+
+	for value in classes.values():
+		if value[-1] == value[0] :
+			print(value)
+		
+	print("----------------")
+
+
 def main():
 	""" invoke each function
 	

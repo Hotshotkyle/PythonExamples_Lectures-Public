@@ -92,7 +92,25 @@ def loopOnDict():
 		
 	print("----------------")
 
+	courseNumber = 150
+	if courseNumber in classes.keys() :
+		print("Yes! We teach ", courseNumber)
 
+	courseNumber = 151
+	if courseNumber in classes.keys() :
+		print("Yes! We teach ", courseNumber)
+	else:
+		print("No! We don't teach ", courseNumber)
+		
+	courseName = "Compilers"
+	if courseName in classes.values() :
+		print("Yes! We teach ", courseName)
+	else:
+		print("No! We don't teach ", courseName)
+		
+
+	print("We teach", len(classes), "courses")
+	
 def main():
 	""" invoke each function
 	

@@ -35,22 +35,63 @@ def namedThreadFunction (name) :
 	for i in range(10):
 		print(name, i)
 		time.sleep(random.uniform(.1,.6))
-		
+
+def namedThreadFunctionWithLock (name, theLock) :
+	""" This function will print a message to the screen then pause
 	
+	This function takes one parameter, a string that is part of 
+	the message printed to the screen
+	"""
+
+	for i in range(10):
+		theLock.acquire()
+		print('\t',name, i)
+		theLock.release()
+		time.sleep(random.uniform(.1,.6))
+		
+
+threads = []	
 # launch three threadFunction threads
-threading.Thread(target=threadFunction).start()
-threading.Thread(target=threadFunction).start()
-threading.Thread(target=threadFunction).start()
+for x in range(3):
+	threads.append (threading.Thread(target=threadFunction))
+	threads[x].start()
 
 
+# wait for the threads to finish before continuing
+for x in range(3):
+	threads[x].join()
+
+print("First set of threads DONE")
 
 # launch three namedThreadFunction threads
 
 # args must be a tuple! So you MUST have a comma in the
 # tuple, even if you only send one argument
 
-threading.Thread(target=namedThreadFunction, args=("doug",)).start()
-threading.Thread(target=namedThreadFunction, args=("shereen",)).start()
-threading.Thread(target=namedThreadFunction, args=("chadd",)).start()
+names = ["doug", "shereen", "chadd"]
+colors = ["red", "blue", "yellow"]
+
+threads.clear()
+
+for x in range(3):
+	threads.append(threading.Thread(target=namedThreadFunction, args=(names[x],)))
+	threads[x].start()
+	
+
+# build the lock
+theLock = threading.Lock()
+
+# launch three namedThreadFunctionWithLock threads
+
+# args must be a tuple! So you MUST have a comma in the
+# tuple, even if you only send one argument
+for x in range(3):
+	threads.append (threading.Thread(target=namedThreadFunctionWithLock,
+	 args=(colors[x],theLock)))
+	threads[x+3].start()
 
 
+for x in range(6):
+	threads[x].join()
+	
+print("all threads DONE")

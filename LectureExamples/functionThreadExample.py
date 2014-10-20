@@ -73,7 +73,7 @@ colors = ["red", "blue", "yellow"]
 
 threads.clear()
 
-for x in range(3):
+for x in range(len(names)):
 	threads.append(threading.Thread(target=namedThreadFunction, args=(names[x],)))
 	threads[x].start()
 	
@@ -85,13 +85,13 @@ theLock = threading.Lock()
 
 # args must be a tuple! So you MUST have a comma in the
 # tuple, even if you only send one argument
-for x in range(3):
+for x in range(len(colors)):
 	threads.append (threading.Thread(target=namedThreadFunctionWithLock,
 	 args=(colors[x],theLock)))
-	threads[x+3].start()
+	threads[x+len(names)].start()
 
 
-for x in range(6):
+for x in range(len(names)+len(colors)):
 	threads[x].join()
 	
 print("all threads DONE")

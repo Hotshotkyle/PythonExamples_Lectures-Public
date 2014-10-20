@@ -18,11 +18,11 @@ import random
 # http://en.wikibooks.org/wiki/Python_Programming/Threading
 
 			
-def threadFunction () :
+def threadFunction (threadNumber) :
 	""" This function will print a message to the screen then pause
 	"""
 	for i in range(10):
-		print('\t',threading.get_ident(), (threading.get_ident()%10)*'\t', i)
+		print('\t',threading.get_ident(), (threadNumber%10)*'\t', i)
 		time.sleep(random.uniform(.1,.6))
 		
 def namedThreadFunction (name) :
@@ -53,7 +53,7 @@ def namedThreadFunctionWithLock (name, theLock) :
 threads = []	
 # launch three threadFunction threads
 for x in range(3):
-	threads.append (threading.Thread(target=threadFunction))
+	threads.append (threading.Thread(target=threadFunction, args=(x,)))
 	threads[x].start()
 
 
@@ -62,6 +62,7 @@ for x in range(3):
 	threads[x].join()
 
 print("First set of threads DONE")
+time.sleep(3)
 
 # launch three namedThreadFunction threads
 
@@ -74,7 +75,8 @@ colors = ["red", "blue", "yellow"]
 threads.clear()
 
 for x in range(len(names)):
-	threads.append(threading.Thread(target=namedThreadFunction, args=(names[x],)))
+	threads.append(threading.Thread(target=namedThreadFunction, 
+		args=(names[x],)))
 	threads[x].start()
 	
 
@@ -85,6 +87,8 @@ theLock = threading.Lock()
 
 # args must be a tuple! So you MUST have a comma in the
 # tuple, even if you only send one argument
+
+# Here, we send two arguments, the color name and the lock
 for x in range(len(colors)):
 	threads.append (threading.Thread(target=namedThreadFunctionWithLock,
 	 args=(colors[x],theLock)))

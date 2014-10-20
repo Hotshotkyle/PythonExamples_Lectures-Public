@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 ################################
-# File Name:	debugExample.py
+# File Name:	debug_example.py
 # Author:		Chadd Williams
 # Date:			10/20/2014
 # Class:		CS 360
@@ -11,7 +11,7 @@
 
 # https://docs.python.org/3/library/pdb.html
 
-
+# python3 -m pdb debug_example.py
 def sumTo(intValue: int) -> int :
 	""" sum the numbers 0 to intValue - 1, return the result
 	"""

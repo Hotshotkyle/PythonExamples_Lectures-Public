@@ -12,25 +12,23 @@
 # https://docs.python.org/3/library/pdb.html
 
 # python3 -m pdb debug_example.py
+
+
+
 def sumTo(intValue: int) -> int :
 	""" sum the numbers 0 to intValue - 1, return the result
 	"""
 	total = 0
 	# where will show you the stack trace
 	for number in range(intValue):
-		# break debug_example.py:22 to set a breakpoint on the following line
+		# break debug_example.py:25 to set a breakpoint on the following line
 		total += number
 	
 	return total
 
 
 
-
-
-
-
-
-# break debug_example.py:34 to set a break point on the following line
+# break debug_example.py:32 to set a break point on the following line
 intValue = 4
 
 # continue will run to the next breakpoint

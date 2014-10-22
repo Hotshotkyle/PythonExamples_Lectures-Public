@@ -11,7 +11,7 @@
 
 #  pip-3.3 install requests
 
-# python3 requestsExample.py
+# python3 requestsExample.py | less
 
 import requests
 import json
@@ -32,4 +32,21 @@ pp = pprint.PrettyPrinter(indent=2)
 # display nicely
 pp.pprint(data)
 
+
+# get the events URL
+eventsURL = data['events_url']
+
+# strip off the trailing {/privacy}
+eventsURL = eventsURL.replace("{/privacy}","")
+
+
+print ("\n------EVENTS---------\n")
+
+eventsData = requests.get(eventsURL)
+
+# transform JSON to a dictionary
+eventsDataDict = d.decode(eventsData.text)
+
+# display nicely
+pp.pprint(eventsDataDict)
 

@@ -6,7 +6,7 @@
 # Date:			10/20/2014
 # Class:		CS 360
 # Assignment:	Lecture Examples
-# Purpose:		a deck of cards to demonstrate unittests
+# Purpose:		example with requests and pretty printing
 ################################
 
 #  pip-3.3 install requests

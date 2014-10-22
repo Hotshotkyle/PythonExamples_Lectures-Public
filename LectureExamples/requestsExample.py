@@ -17,6 +17,11 @@ import requests
 import json
 import pprint
 
+
+# GitHub API:
+# https://api.github.com/
+# https://developer.github.com/v3/
+
 # fetch data from the web (this is JSON data)
 r = requests.get("https://api.github.com/users/cs360f14")
 

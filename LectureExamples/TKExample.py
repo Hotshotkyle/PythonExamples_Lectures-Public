@@ -29,8 +29,13 @@ class ButtonHandler:
 		self.printButtonClickCounter()
 
 	def pacificButton(self):
+		messages = [ "Go Boxers!", 
+					"Now you owe $30,000", 
+					"Wooo Forest Grove!",
+					"Don't look back"]
 		self._counter += 1
 		print("You pressed the Pacific button")
+		print ("\t",messages[self._counter % len(messages)] )
 		self.printButtonClickCounter()
 
 

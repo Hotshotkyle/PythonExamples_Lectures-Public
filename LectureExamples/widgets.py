@@ -107,6 +107,23 @@ class WidgetApp:
 		self.myCanvas.create_oval(event.x, event.y, event.x+2, event.y+2)
 		
 	
+	def loadImageFromURL(self, URL) :
+		"""Load and image from a URL and return that image
+		"""
+		# adapted from here
+		# http://stackoverflow.com/questions/6086262/python-3-how-to-retrieve-an-image-from-the-web-and-display-in-a-gui-using-tkint/6088442#6088442
+		
+		import urllib.request
+		
+		connection = urllib.request.urlopen(URL)
+		raw_data = connection.read()
+		connection.close()
+		
+		import base64
+		b64_data = base64.encodestring(raw_data)
+		return PhotoImage(data=b64_data)
+		
+
 	def setupWidgets(self):
 		"""Create the root window and setup the widgets"""
 		
@@ -125,7 +142,17 @@ class WidgetApp:
 		# the note on the following page is vital. Make sure you keep a
 		# reference to the image!
 		# http://effbot.org/tkinterbook/photoimage.htm
-		self.imgobj = PhotoImage(file='Obi.gif')
+		
+		# we are loading an image from a URL because we don't
+		# want to place an image we don't own the copyright for
+		# in our GitHub repository.
+		
+		# if we wanted to load the image from a local file do 
+		# the following:
+		# self.imgobj = PhotoImage(file='Obi.gif')
+
+		# load image from URL
+		self.imgobj = self.loadImageFromURL("http://zeus.cs.pacificu.edu/chadd/Obi.gif")
 
 		# create the Content Frame
 		self.contentFrame = Frame(self.root)

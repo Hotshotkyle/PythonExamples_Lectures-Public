@@ -65,15 +65,15 @@ okButton=Button(master=cF, text="OK",command=message)
 okButton.grid(column=0,row=0)
 
 
-# create a button, hooked up the Frame, with the text OK
-# and the button press goes to the function message()
+# create a button, hooked up the Frame, with the text Wow
+# and the button press goes to the method ButtonHandler.wowButton()
 wowButton=Button(master=cF, text="Wow",command=handler.wowButton)
 
 # place the button the grid
 wowButton.grid(column=1,row=0)
 
-# create a button, hooked up the Frame, with the text OK
-# and the button press goes to the function message()
+# create a button, hooked up the Frame, with the text Pacific
+# and the button press goes to the method ButtonHandler.pacificButton()
 pacificButton=Button(master=cF, text="Pacific",command=handler.pacificButton)
 
 # place the button the grid

@@ -56,7 +56,7 @@ class WidgetApp:
 		print(self.building.get())
 		print('Click', event.x, event.y)	
 		
-	def scaleUpdate(self):
+	def scaleUpdate(self, value):
 		""" the scale has been moved"""
 
 		print(self.myScale.get())

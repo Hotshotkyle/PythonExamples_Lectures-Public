@@ -93,8 +93,12 @@ entryData.set('Entry')
 
 # create the text box, called an Entry.
 textInput =  Entry(cF, textvariable=entryData, width=6)
+
 # place the box on the grid
-textInput.grid(column=0, row=1)
+# stick='news' means to expand the text box to fill the grid space
+# in the north, east, west, south directions (you can use any
+# subset of news to only partially fill the grid
+textInput.grid(column=0, row=1, sticky='news')
 
 
 # run the UI loop

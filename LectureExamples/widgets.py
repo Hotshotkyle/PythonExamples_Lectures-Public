@@ -151,9 +151,13 @@ class WidgetApp:
 		# the following:
 		# self.imgobj = PhotoImage(file='Obi.gif')
 
-		# load image from URL
-		self.imgobj = self.loadImageFromURL("http://zeus.cs.pacificu.edu/chadd/Obi.gif")
-
+		try:
+			# load image from URL
+			self.imgobj = self.loadImageFromURL("http://zeus.cs.pacificu.edu/chadd/Obi.gif")
+		except Exception:
+			# loading failed. Try the local image file
+			self.imgobj = PhotoImage(file='backupImage.gif')
+			
 		# create the Content Frame
 		self.contentFrame = Frame(self.root)
 

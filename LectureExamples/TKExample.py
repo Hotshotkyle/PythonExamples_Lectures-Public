@@ -43,6 +43,12 @@ class ButtonHandler:
 def message():
 	""" callback function to print OK when the button is pressed """
 	print("OK")
+	
+	# retrieve the data from the text box and display the string
+	# note that entryData is a Global Variable.
+	# 
+	# better to wrap entryData in a class
+	print(entryData.get())
 
 
 
@@ -78,6 +84,18 @@ pacificButton=Button(master=cF, text="Pacific",command=handler.pacificButton)
 
 # place the button the grid
 pacificButton.grid(column=1,row=1)
+
+
+# create a StringVar that will hook up to the text in the text box
+entryData = StringVar()
+# set the default data in the text box
+entryData.set('Entry')
+
+# create the text box, called an Entry.
+textInput =  Entry(cF, textvariable=entryData, width=6)
+# place the box on the grid
+textInput.grid(column=0, row=1)
+
 
 # run the UI loop
 root.mainloop()

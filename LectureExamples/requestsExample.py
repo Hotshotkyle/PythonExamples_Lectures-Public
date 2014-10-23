@@ -49,6 +49,9 @@ print ("\n------EVENTS---------\n")
 
 eventsData = requests.get(eventsURL)
 
+
+print(eventsData)
+
 # transform JSON to a dictionary
 eventsDataDict = d.decode(eventsData.text)
 

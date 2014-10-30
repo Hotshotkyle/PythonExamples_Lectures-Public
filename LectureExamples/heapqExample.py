@@ -28,6 +28,8 @@ for x in reversed(range(1, 9)):
 	print(x)
 	heappush(theHeap, (x, data[x-1]) )
 
+print('--------------')
+
 # The smallest item is at the top of the list
 print(theHeap)
 print('--------------')

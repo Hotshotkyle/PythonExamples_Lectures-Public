@@ -58,7 +58,7 @@ def main():
 	# and the button press goes to the function message()
 	okButton=Button(master=cF, text="OK",command=okButtonClick)
 
-	# place the button the grid
+	# place the button on the grid of the Frame
 	okButton.grid(column=0,row=0)
 
 	# run the UI loop

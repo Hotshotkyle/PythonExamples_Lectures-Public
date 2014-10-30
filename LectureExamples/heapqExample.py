@@ -46,9 +46,8 @@ while not heapIsEmpty:
 	# pop the smallest item off the top of the heap!
 	try:
 		x = heappop(theHeap)
+		print(x)
 	except IndexError:
 		# when the heap is empty, heappop() raises IndexError
 		# catch the exception and break out of the loop
 		heapIsEmpty = True
-		
-	print(x)

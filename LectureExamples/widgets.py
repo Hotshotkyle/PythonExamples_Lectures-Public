@@ -361,7 +361,7 @@ class WidgetApp:
 
 		# add each Frame with a Text label.
 		self.myNotebook.add(self.myNotebookFrame1, text='FrameOne')
-		self.myNotebook.add(self.myNotebookFrame2, text='EmpytFrame')
+		self.myNotebook.add(self.myNotebookFrame2, text='EmpytFrame inside a Notebook')
 
 		# add widgets to the Frames
 		self.myFrameButton = Button(self.myNotebookFrame1, text="Frame button!", command=self.message)

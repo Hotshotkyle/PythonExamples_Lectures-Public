@@ -14,13 +14,19 @@ from heapq import *
 
 # https://docs.python.org/3/library/heapq.html
 
+# The heap should contain tuples. The first item in the
+# tuple will be used as the sort key and should use normally
+# available Python comparison operations
+
+# make up some fake data
+data = [ str(x)*x for x in range(1, 9) ]
 
 # create the heap as an empty list
 theHeap = []
 
-for x in reversed(range(9)):
+for x in reversed(range(1, 9)):
 	print(x)
-	heappush(theHeap, x)
+	heappush(theHeap, (x, data[x-1]) )
 
 # The smallest item is at the top of the list
 print(theHeap)

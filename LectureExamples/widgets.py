@@ -232,13 +232,14 @@ class WidgetApp:
 
 		# Combobox
 		self.building = StringVar()
-		self.myCombobox = Combobox(self.contentFrame, textvariable=self.building,values=('Strain','Price','Marsh'))
+		self.myCombobox = Combobox(self.contentFrame, textvariable=self.building,values=('Combobox', 'Strain','Price','Marsh'))
+		self.building.set('Combobox')
 		self.myCombobox.grid(column=2, row=1)
 		self.myCombobox.bind('<<ComboboxSelected>>', self.comboBoxChange)
 
 
 		# Listbox
-		self.listBoxData = ('OR', 'WA','HI','CA')
+		self.listBoxData = ('ListBox', 'OR', 'WA','HI','CA')
 		self.statenames = StringVar(value=self.listBoxData)
 
 		self.myListBox = Listbox(self.contentFrame, height=3, listvariable=self.statenames)
@@ -270,7 +271,7 @@ class WidgetApp:
 
 		# 1.0 is the index of the first character in the Text widget.
 		# """ is a multiline string (newlines are preserved in the string)
-		self.myText.insert(1.0, """A long time ago, in a galaxy far, far away....
+		self.myText.insert(1.0, """Text\nA long time ago, in a galaxy far, far away....
 
 		It is a period of civil war. Rebel
 		spaceships, striking from a hidden
@@ -304,7 +305,7 @@ class WidgetApp:
 
 		# Spinbox
 		self.spinValue = StringVar()
-		self.mySpinbox = Spinbox( self.contentFrame, textvariable=self.spinValue, values=('Monday','Tuesday','Wednesday','Thursday','Friday'), wrap=True)
+		self.mySpinbox = Spinbox( self.contentFrame, textvariable=self.spinValue, values=('Spinbox', 'Monday','Tuesday','Wednesday','Thursday','Friday'), wrap=True)
 		self.mySpinbox.grid(column=0, row=3)
 
 
@@ -345,7 +346,7 @@ class WidgetApp:
 
 		# fill the Tree with dummy data
 		for x in range(10):
-			self.myTree.insert('', 'end', values=['name'+str(x), 'lname'+str(x),'email'+str(x)])
+			self.myTree.insert('', 'end', values=['tree name'+str(x), 'lname'+str(x),'email'+str(x)])
 
 
 		# Notebook

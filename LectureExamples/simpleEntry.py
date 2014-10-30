@@ -75,7 +75,7 @@ def main():
 	# Entry box.  You can also call .get() and .set() to 
 	# get and set the text in the Entry.
 	#
-	# entryData would be useful if it was a class instance variable
+	# A stringVar would be useful if it was a class instance variable
 	# for a class the periodically get/set data in Entry.  This 
 	# variable can be passed around so that functions/methods/classes
 	# that don't have access to the Entry box directly can access

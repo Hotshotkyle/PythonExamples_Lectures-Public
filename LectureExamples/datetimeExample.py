@@ -45,3 +45,11 @@ else:
 	print('Today is not a holiday! Something is wrong!')
 
 		
+# create a date from a string
+# formatting strings:
+# http://strftime.org/
+# http://strftime.net/
+stringDate = 'Nov 2 2014'
+newDate = datetime.strptime(stringDate, '%b %d %Y').date()
+
+print(newDate)

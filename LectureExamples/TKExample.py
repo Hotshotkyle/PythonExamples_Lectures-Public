@@ -57,6 +57,8 @@ handler = ButtonHandler()
 # build the root
 root = Tk()
 
+root.title("TK-421")
+	
 # get a frame
 cF = Frame(root)
 
@@ -68,7 +70,7 @@ cF.grid(column=0,row=0)
 okButton=Button(master=cF, text="OK",command=message)
 
 # place the button on the grid
-okButton.grid(column=0,row=0)
+okButton.grid(column=0,row=0, sticky='e')
 
 
 # create a button, hooked up the Frame, with the text Wow
@@ -76,11 +78,12 @@ okButton.grid(column=0,row=0)
 wowButton=Button(master=cF, text="Wow",command=handler.wowButton)
 
 # place the button on the grid
-wowButton.grid(column=1,row=0)
+wowButton.grid(column=1,row=0, sticky='w')
 
 # create a button, hooked up the Frame, with the text Pacific
 # and the button press goes to the method ButtonHandler.pacificButton()
-pacificButton=Button(master=cF, text="Pacific",command=handler.pacificButton)
+pacificButton=Button(master=cF, text="Pacific University",
+	command=handler.pacificButton)
 
 # place the button on the grid
 pacificButton.grid(column=1,row=1)
@@ -92,7 +95,7 @@ entryData = StringVar()
 entryData.set('Entry')
 
 # create the text box, called an Entry.
-textInput =  Entry(cF, textvariable=entryData, width=6)
+textInput =  Entry(cF, textvariable=entryData, width=16)
 
 # place the box on the grid
 # stick='news' means to expand the text box to fill the grid space

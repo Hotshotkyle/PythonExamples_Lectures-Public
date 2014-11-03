@@ -14,6 +14,12 @@ import re
 
 # https://docs.python.org/3/library/re.html
 
+# strings and escape sequences
+# https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
+
+# regular expression how to
+# https://docs.python.org/3/howto/regex.html#regex-howto
+
 # some data to work with later.
 classes = ['CS150', 'CS250', 'CS300', 'CS360', 'CS 480', 'cs310',' CS260']
 
@@ -81,3 +87,33 @@ for theClass in classes:
 		print("SEARCH:",  result.group(2))
 
 	print('--')
+
+
+print('-----RAW STRINGS----------')
+
+
+# if you are searching for an escape sequence, use the r prefix
+# on the string to mark the string as a raw string
+
+# https://docs.python.org/3/howto/regex.html#the-backslash-plague
+
+theData='NOT RAW: >>slash n \n slash t \t<<'
+print(theData)
+
+theData=r'RAW: >>slash n \n slash t \t<<'
+print(theData)
+
+# raw string
+found = re.search(r'\\n slash', theData)
+if not None is found:
+	print("FOUND using raw string")
+else:
+	print("OH NO! NOT FOUND using raw string")
+
+# not raw string
+found = re.search('\\\\n slash', theData)
+if not None is found:
+	print("FOUND using NON raw string")
+else:
+	print("OH NO! NOT FOUND using NON raw string")
+

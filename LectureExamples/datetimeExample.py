@@ -49,7 +49,7 @@ else:
 # formatting strings:
 # http://strftime.org/
 # http://strftime.net/
-stringDate = 'Nov 2 2014'
-newDate = datetime.strptime(stringDate, '%b %d %Y').date()
+stringDate = 'Sun November 2 2014'
+newDate = datetime.strptime(stringDate, '%a %B %d %Y').date()
 
 print(newDate)

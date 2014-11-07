@@ -14,16 +14,27 @@ class Course :
 	"""Represent a single Course"""
 	kind = 'Gen Ed'
 
-	def __init__(self, name, number) :
+	def __init__(self, name, number, credits=4) :
 		# _name is a 'private' instance variable
 		self._name = name 
 		self._number = number
+		self._credits = credits
 		self.__display()
 
 	def display(self):
-		print(self.kind,"Course:" , self._name, self._number, sep=" ")
+		print(self.kind,"Course:" , self._name, self._number, self._credits, sep=" ")
 		
 	
+	def setCredits(self, credits):
+		""" set the credits member variable. 
+		
+		Raise a TypeError if a non-integer is provided.
+		"""
+		if not type(credits) is int :
+			raise TypeError("Credits must be an integer!")
+		self._credits = credits
+			
+		
 	# create a private copy named _Course__display
 	__display = display
 
@@ -59,6 +70,21 @@ cs360._Course__display()
 
 print("+++++++++++++++++++++")
 
+
+# Try to set the number of credits.
+# catch the possible exception in case
+# we give a non-integer value.
+try:
+	cs360.setCredits(5)
+except TypeError as err:
+	print (err)
+
+try:
+	cs360.setCredits('a')
+except TypeError as err:
+	print (err)
+	
+		
 
 """
 _name : private by convention

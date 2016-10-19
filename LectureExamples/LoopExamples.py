@@ -11,11 +11,19 @@
 
 
 
+def loopOnCounter():
+    """ loop on a counter
+    """
+
+    counter = 1
+    while counter < 10 :
+        print(counter)
+        counter += 1
 
 def loopOnList():
     """ loop on a list
 
-        """
+    """
 
     # note that repeats are allowed!
     names = ["Doug", "Shereen", "Chadd", "Mike", "Chris",
@@ -113,6 +121,7 @@ def main():
 
         """
 
+    loopOnCounter()
     loopOnList()
     loopOnSet()
     loopOnDict()

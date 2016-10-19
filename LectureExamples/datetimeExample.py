@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 ########################################################################
-# File Name:  	datetimeExample.py
-# Author:		chadd williams
-# Date:			Oct 30, 2014
-# Class:		CS 360
-# Assignment:	Example datetime
-# Purpose:		Show examples of using datetime
+# File Name:    datetimeExample.py
+# Author:       chadd williams
+# Date:         Oct 30, 2014
+# Class:        CS 360
+# Assignment:   Example datetime
+# Purpose:      Show examples of using datetime
 ########################################################################
 
 
@@ -27,24 +27,24 @@ print('Halloween', holiday)
 print('timetuple', holiday.timetuple())
 
 if today == holiday :
-	print('Today is a holiday!')
+    print('Today is a holiday!')
 else:
-	print('Today is not a holiday!')
-	
-	# create a timedelta
-	theTimeDelta = (holiday-today);
-	print('The holiday is', theTimeDelta.days ,'days away!')
-	
+    print('Today is not a holiday!')
+
+    # create a timedelta
+    theTimeDelta = (holiday-today);
+    print('The holiday is', theTimeDelta.days ,'days away!')
+
 
 # let's make today a holiday
 holiday = date(today.year, today.month, today.day)
 
 if today == holiday :
-	print('Today is a holiday! Wow!')
+    print('Today is a holiday! Wow!')
 else:
-	print('Today is not a holiday! Something is wrong!')
+    print('Today is not a holiday! Something is wrong!')
 
-		
+
 # create a date from a string
 # formatting strings:
 # http://strftime.org/

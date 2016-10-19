@@ -15,11 +15,10 @@ answer = 42
 
 if 7 < answer :
     print("More than seven")
-    
+
 if 7 < answer :
     print("More than seven")
 elif 7 > answer :
     print("Less than seven")
 else:
     print("Exactly seven")
-    

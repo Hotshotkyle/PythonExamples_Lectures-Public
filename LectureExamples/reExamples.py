@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 ########################################################################
-# File Name:  	reExamples.py
-# Author:		chadd williams
-# Date:			Oct 30, 2014
-# Class:		CS 360
-# Assignment:	Example Regular Expressions
-# Purpose:		Show examples of using regular expressions
+# File Name:    reExamples.py
+# Author:       chadd williams
+# Date:         Oct 30, 2014
+# Class:        CS 360
+# Assignment:   Example Regular Expressions
+# Purpose:      Show examples of using regular expressions
 ########################################################################
 
 
@@ -55,38 +55,38 @@ print('---------------')
 regExObject = re.compile("(CS)(\d*)")
 
 for theClass in classes:
-	
-	# match() only looks to match the expression at the start of
-	# the string.  
-	result = regExObject.match(theClass)
-	
-	print("TEST:", theClass)
 
-	# classes[4] is 'CS 480' which does not match the RE
-	# classes[5] is 'cs310'  which does not match the RE
-	# classes[6] is ' CS260' which does not match the RE 
-	# 						 at the beginning of the string
-	
-	# so check to make sure match() does not return NoneType
-	
-	if not result is None:
-		# get the second group of ( )
-		print("MATCH:",  result.group(2))
+    # match() only looks to match the expression at the start of
+    # the string.
+    result = regExObject.match(theClass)
 
-	result = regExObject.search(theClass)
+    print("TEST:", theClass)
 
-	# classes[4] is 'CS 480' which does not match the RE
-	# classes[5] is 'cs310'  which does not match the RE
-	# classes[6] is ' CS260' which does not match the RE 
-	# 						 at the beginning of the string
-	
-	# so check to make sure match() does not return NoneType
-	
-	if not result is None:
-		# get the second group of ( )
-		print("SEARCH:",  result.group(2))
+    # classes[4] is 'CS 480' which does not match the RE
+    # classes[5] is 'cs310'  which does not match the RE
+    # classes[6] is ' CS260' which does not match the RE
+    #                                                at the beginning of the string
 
-	print('--')
+    # so check to make sure match() does not return NoneType
+
+    if not result is None:
+        # get the second group of ( )
+        print("MATCH:",  result.group(2))
+
+    result = regExObject.search(theClass)
+
+    # classes[4] is 'CS 480' which does not match the RE
+    # classes[5] is 'cs310'  which does not match the RE
+    # classes[6] is ' CS260' which does not match the RE
+    #                                                at the beginning of the string
+
+    # so check to make sure match() does not return NoneType
+
+    if not result is None:
+        # get the second group of ( )
+        print("SEARCH:",  result.group(2))
+
+    print('--')
 
 
 print('-----RAW STRINGS----------')
@@ -106,14 +106,13 @@ print(theData)
 # raw string
 found = re.search(r'\\n slash', theData)
 if not None is found:
-	print("FOUND using raw string")
+    print("FOUND using raw string")
 else:
-	print("OH NO! NOT FOUND using raw string")
+    print("OH NO! NOT FOUND using raw string")
 
 # not raw string
 found = re.search('\\\\n slash', theData)
 if not None is found:
-	print("FOUND using NON raw string")
+    print("FOUND using NON raw string")
 else:
-	print("OH NO! NOT FOUND using NON raw string")
-
+    print("OH NO! NOT FOUND using NON raw string")

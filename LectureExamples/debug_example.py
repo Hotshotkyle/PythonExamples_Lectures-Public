@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 ################################
-# File Name:	debug_example.py
-# Author:		Chadd Williams
-# Date:			10/20/2014
-# Class:		CS 360
-# Assignment:	Lecture Examples
-# Purpose:		Demonstrate pdb, the debugger
+# File Name:    debug_example.py
+# Author:       Chadd Williams
+# Date:         10/20/2014
+# Class:        CS 360
+# Assignment:   Lecture Examples
+# Purpose:      Demonstrate pdb, the debugger
 ################################
 
 # https://docs.python.org/3/library/pdb.html
@@ -16,15 +16,15 @@
 
 
 def sumTo(intValue: int) -> int :
-	""" sum the numbers 0 to intValue - 1, return the result
-	"""
-	total = 0
-	# where will show you the stack trace
-	for number in range(intValue):
-		# break debug_example.py:25 to set a breakpoint on the following line
-		total += number
-	
-	return total
+    """ sum the numbers 0 to intValue - 1, return the result
+    """
+    total = 0
+    # where will show you the stack trace
+    for number in range(intValue):
+        # break debug_example.py:25 to set a breakpoint on the following line
+        total += number
+
+    return total
 
 
 
@@ -44,4 +44,3 @@ print(sumTo(intValue))
 intValue = sumTo(5)
 
 print(intValue)
-

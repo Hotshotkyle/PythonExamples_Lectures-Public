@@ -1,23 +1,23 @@
 #!/usr/bin/python3
 
 ################################
-# File Name:	dynamicClassExample.py
-# Author:		Chadd Williams
-# Date:			10/17/2014
-# Class:		CS 360
-# Assignment:	Lecture Examples
-# Purpose:		Demonstrate dynamic class
+# File Name:    dynamicClassExample.py
+# Author:       Chadd Williams
+# Date:         10/17/2014
+# Class:        CS 360
+# Assignment:   Lecture Examples
+# Purpose:      Demonstrate dynamic class
 ################################
 
 
 # create an empty class calle numbers
 class Numbers:
-	pass
-	
-	
+    pass
+
+
 def printV(value):
-	"""Print the integer attribute in the object value"""
-	print(value.integer)
+    """Print the integer attribute in the object value"""
+    print(value.integer)
 
 
 # create an object

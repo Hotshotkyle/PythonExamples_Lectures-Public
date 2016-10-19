@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 ########################################################################
-# File Name:  	heapqExample.py
-# Author:		chadd williams
-# Date:			Oct 30, 2014
-# Class:		CS 360
-# Assignment:	Example heapq
-# Purpose:		Show examples of using heapq
+# File Name:    heapqExample.py
+# Author:       chadd williams
+# Date:         Oct 30, 2014
+# Class:        CS 360
+# Assignment:   Example heapq
+# Purpose:      Show examples of using heapq
 ########################################################################
 
 
@@ -25,8 +25,8 @@ data = [ str(x)*x for x in range(1, 9) ]
 theHeap = []
 
 for x in reversed(range(1, 9)):
-	print(x)
-	heappush(theHeap, (x, data[x-1]) )
+    print(x)
+    heappush(theHeap, (x, data[x-1]) )
 
 print('--------------')
 
@@ -36,18 +36,18 @@ print('--------------')
 
 
 # a heap does not provide an iterator!
-# the following is an unusual use of a heap for 
+# the following is an unusual use of a heap for
 # demonstration purposes only
 
 heapIsEmpty = False
 
 while not heapIsEmpty:
 
-	# pop the smallest item off the top of the heap!
-	try:
-		x = heappop(theHeap)
-		print(x)
-	except IndexError:
-		# when the heap is empty, heappop() raises IndexError
-		# catch the exception and break out of the loop
-		heapIsEmpty = True
+    # pop the smallest item off the top of the heap!
+    try:
+        x = heappop(theHeap)
+        print(x)
+    except IndexError:
+        # when the heap is empty, heappop() raises IndexError
+        # catch the exception and break out of the loop
+        heapIsEmpty = True

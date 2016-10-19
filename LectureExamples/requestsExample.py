@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 ################################
-# File Name:	requestsExample.py
-# Author:		Chadd Williams
-# Date:			10/20/2014
-# Class:		CS 360
-# Assignment:	Lecture Examples
-# Purpose:		example with requests and pretty printing
+# File Name:    requestsExample.py
+# Author:       Chadd Williams
+# Date:         10/20/2014
+# Class:        CS 360
+# Assignment:   Lecture Examples
+# Purpose:      example with requests and pretty printing
 ################################
 
 #  pip-3.3 install requests
@@ -57,4 +57,3 @@ eventsDataDict = d.decode(eventsData.text)
 
 # display nicely
 pp.pprint(eventsDataDict)
-

@@ -58,3 +58,18 @@ pairs.sort(key=lambda pair: pair[1])
 
 # the list is now sorted by the second element in each tuple
 print(pairs)
+
+
+print("Tuples")
+
+# create a list of tuples
+aListOfTuples = [ ("a", 1), ("b", 2), ("c", 2), ("q",3) ]
+
+# display the entries in a list where entryfilter is true
+def displayAllEntries(theList, entryfilter=NotImplemented):
+    for entry in theList:
+        if entryfilter is NotImplemented or entryfilter(entry):
+            print(entry)
+
+# display only tuples where the second field is 2
+displayAllEntries(aListOfTuples,  lambda entry: entry[1] == 2)

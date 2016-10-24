@@ -23,7 +23,7 @@ import pprint
 # https://developer.github.com/v3/
 
 # fetch data from the web (this is JSON data)
-r = requests.get("https://api.github.com/users/cs360f14")
+r = requests.get("https://api.github.com/users/cs360f16")
 
 # build a decoder
 d = json.JSONDecoder()
